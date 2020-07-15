@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Products Slider</title>  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="d-flex mt-4 justify-content-center">
+  <div class="container text-center">
+    <h1 class="display-3 text-danger">Products Slider</h1>
+      <div class="row mb-4">
+        <div class="col-sm-3 text-danger mb-4 imgThumbnails">
+          <div><img src="images/one.jpeg" class="imgThumbnail" /></div>
+          <div><img src="images/two.jpeg" class="imgThumbnail" /></div>
+          <div><img src="images/three.jpeg" class="imgThumbnail" /></div>
+          <div><img src="images/four.jpeg" class="imgThumbnail" /></div>
+          <div><img src="images/five.jpeg" class="imgThumbnail" /></div>    
+        </div>
+        <div class="col-sm-9 text-center fullDisplay">
+          <img src="images/one.jpeg" class="imgFullView" />
+        </div>      
+      </div>
+   </div>
+  </div>
+  <script>
+    let imgFullView = document.querySelector(".imgFullView");
+    let imgThumbnail = document.querySelectorAll(".imgThumbnail");
+    /* for(var i = 0; i<=imgThumbnail.length; i++){
+      imgThumbnail[i].addEventListener('click', function(){
+        imgFullView.src = this.src;
+      })
+    } */
+    imgThumbnail.forEach( img => {
+      img.addEventListener('mouseover', function() {
+        imgFullView.src = this.src;        
+      });
+    });
+  </script>
+</body>
+</html>
